@@ -1,8 +1,8 @@
-## LunArts Studio'dan Son Gelişmeler
+## LunartsStudio'dan Son Gelismeler
 
 -Deprem Alarmı 2.0 çıktı.
 
-### Güncelleme Detayları
+### Güncelleme Detaylari
 
 2.0 Yaması Detayları
 
@@ -24,8 +24,10 @@
 
 Geliştirici.
 
-### İletişim Noktaları
+### Iletisim Adresleri
 
 [Instagram](https://www.instagram.com/studiolunarts/)
+
 [Twitter](https://twitter.com/LunartsStudio)
+
 [Uygulama Sayfası](https://play.google.com/store/apps/details?id=com.berkehansari.depremalarm)
