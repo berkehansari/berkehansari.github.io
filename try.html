@@ -27,13 +27,13 @@
     </div>
 
     <script>
-        const X_PIXELS=14
-        const Y_PIXELS=28
+        const X_PIXELS=54
+        const Y_PIXELS=72
         const X_OFFSET=0
         const Y_OFFSET=0
 
-        const X_IN_PLACE=1511
-        const Y_IN_PLACE=349
+        const X_IN_PLACE=1870
+        const Y_IN_PLACE=1036
 
         function getMousePos(canvas, evt) {
             const rect = canvas.getBoundingClientRect();
@@ -76,7 +76,7 @@
             bg.drawImage(img, 0, 0, img.width, img.height, 0, Y_OFFSET, w, h)
             drawGrid(0, Y_OFFSET, w, h + Y_OFFSET, bg)
         };
-        img.src = "https://cdn.discordapp.com/attachments/736867766770073632/960251839289393193/rsz_sprite-120007.png";
+        img.src = "https://cdn.discordapp.com/attachments/733959938052849745/960256595583987722/97959ac63f95a7cf590ecf7d888fcac9_1.png";
 
         function drawText(text, x, y){
             fg.font = '80px Sans-serif';
