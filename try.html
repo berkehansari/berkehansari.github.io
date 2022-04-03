@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <style>
+    * {
+        top: 0;
+        left: 0;
+        padding: 0;
+        margin: 0;
+        width: 8px;
+        height: 8px;
+    }
+    .row {
+        position: absolute;
+        width: 1040px;
+    }
+    .square {
+        position: absolute;
+    }
+    .square:hover {
+        z-index: 1;
+        border: solid 1px black;
+        outline: solid 1px white;
+    }
+    .info{
+        color: black;
+        position: absolute;
+        background-color: white;
+        font-family: monospace;
+        z-index: 2;
+        border-radius: 8px;
+        height: 20px;
+        font-size: 16px;
+        width: 100px;
+        pointer-events: none;
+        text-align: center;
+        border: solid 1px black;
+        outline: solid 1px white;
+    }
+    </style>
+    
+    <script>
+        function onTileHovered(x, y) {
+        const pos = document.getElementById("pos");
+        pos.innerText = "[" + (x + 0) + ", " + (y + 0) + "]";
+        pos.style.left = x * 8 + 16 + "px";
+        pos.style.top = y * 8 - 6 + "px";
+      }
+    </script>
