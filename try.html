@@ -22,18 +22,18 @@
    
 
     <div id = "container" class = "container">
-        <canvas id = "canvas_background" width = "32" height = "32"></canvas>
-        <canvas id = "canvas_foreground" width = "32" height = "32"></canvas>
+        <canvas id = "canvas_background" width = "83" height = "40"></canvas>
+        <canvas id = "canvas_foreground" width = "83" height = "40"></canvas>
     </div>
 
     <script>
-        const X_PIXELS=32
-        const Y_PIXELS=32
+        const X_PIXELS=83
+        const Y_PIXELS=40
         const X_OFFSET=0
         const Y_OFFSET=0
 
-        const X_IN_PLACE=1881
-        const Y_IN_PLACE=1077
+        const X_IN_PLACE=1492
+        const Y_IN_PLACE=1668
 
         function getMousePos(canvas, evt) {
             const rect = canvas.getBoundingClientRect();
@@ -76,7 +76,7 @@
             bg.drawImage(img, 0, 0, img.width, img.height, 0, Y_OFFSET, w, h)
             drawGrid(0, Y_OFFSET, w, h + Y_OFFSET, bg)
         };
-        img.src = "https://cdn.discordapp.com/attachments/733959938052849745/960270225230667836/wired.png";
+        img.src = "https://cdn.discordapp.com/attachments/735449955304734760/960636186853015622/dchlfd2-561cf44d-4b3b-46f7-a596-a1f7a6de8a5a.png";
 
         function drawText(text, x, y){
             fg.font = '80px Sans-serif';
