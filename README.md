@@ -1,6 +1,6 @@
 ## LunartsStudio'dan Son Gelismeler
 
--Deprem Alarmı 2.0 çıktı.
+-Deprem Alarmı 3.0 çıktı.
 
 ### Güncelleme Detaylari
 
