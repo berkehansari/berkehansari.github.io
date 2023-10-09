@@ -1,48 +1,82 @@
-/* CSS dosyası içerisinde uzay temalı arka plan oluşturma */
-body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #1f1f1f; /* Arka plan rengini siyah olarak ayarlıyoruz */
-    z-index: -1; /* Arka planın içerik üzerinde olmasını sağlar */
+/* Genel stil */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #1f1f1f;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
 }
 
-/* Beyaz yıldızlar */
-body::after {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/wVgAAD+A/Bb7hAAAAASUVORK5CYII='); /* Beyaz yıldızlar arka planı */
-    z-index: -2; /* Yıldızların arka planın üzerinde olmasını sağlar */
-    animation: stars 50s linear infinite; /* Yıldız animasyonunu ekler */
+/* Başlık */
+header {
+    text-align: center;
+    padding: 20px;
 }
 
-/* Yıldız animasyonu */
-@keyframes stars {
-    0% {
-        transform: translateY(0);
-    }
-    100% {
-        transform: translateY(-100vh);
-    }
+header h1 {
+    font-size: 36px;
+    color: #e38e29;
 }
 
-/* Hareketli ve dönen gezegenler */
-.gezegenler {
-    position: fixed;
-    top: 50%; /* Sayfanın yüksekliğinin ortasına gelecek şekilde ayarlanabilir */
-    left: 50%; /* Sayfanın genişliğinin ortasına gelecek şekilde ayarlanabilir */
-    transform: translate(-50%, -50%); /* Ortalamak için kullanılır */
-    animation: rotate 60s linear infinite, move 20s linear infinite; /* Gezegen animasyonları ekler */
+/* Menü */
+.menu {
+    list-style-type: none;
+    padding: 0;
 }
 
-/* Gezegenlerin dönme animasyonu */
+.menu li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+/* Anasayfa içeriği */
+.intro {
+    text-align: center;
+    padding: 20px;
+}
+
+/* Dikdörtgen */
+.rectangle {
+    width: 50%;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px solid #e38e29;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Logo */
+.logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+/* Yıldızlar */
+.stars {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background-color: white;
+    animation: twinkling 5s infinite;
+}
+
+/* Gezegenler */
+.planet {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    animation: rotate 60s linear infinite;
+}
+
+/* Gezegen animasyonu */
 @keyframes rotate {
     0% {
         transform: translate(-50%, -50%) rotate(0deg);
@@ -52,20 +86,31 @@ body::after {
     }
 }
 
-/* Gezegenlerin hareket animasyonu */
-@keyframes move {
+/* Yıldız animasyonu */
+@keyframes twinkling {
     0% {
-        transform: translate(-50%, -50%) translateY(0);
+        transform: translateY(0);
+        opacity: 1;
     }
     100% {
-        transform: translate(-50%, -50%) translateY(-20px);
+        transform: translateY(-100vh);
+        opacity: 0;
     }
 }
 
-/* Gezegenlerin stilini özelleştirin */
-.gezegen {
-    width: 50px;
-    height: 50px;
-    background: #FF4500; /* Turuncu renkli gezegen */
-    border-radius: 50%; /* Dairesel gezegen şekli */
+/* Alt menü */
+.footer {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+}
+
+/* Buttonlar */
+.button {
+    background-color: #e38e29;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    margin-right: 10px;
+    border-radius: 5px;
 }
