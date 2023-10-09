@@ -34,11 +34,13 @@ body {
     padding: 20px;
 }
 
-/* Logo */
+/* Logo stil */
 .logo {
     position: absolute;
     top: 20px;
     left: 20px;
+    width: 40px; /* İstediğiniz genişlik değerini ayarlayın */
+    height: auto;
 }
 
 /* Yıldızlar için stil */
