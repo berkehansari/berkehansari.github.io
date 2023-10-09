@@ -23,20 +23,6 @@ body::after {
     animation: stars 50s linear infinite; /* Yıldız animasyonunu ekler */
 }
 
-/* Mor ve turuncu nebula bulutları */
-body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: 
-        radial-gradient(ellipse at bottom, #8A2BE2 0%, transparent 70%), /* Mor nebula */
-        radial-gradient(ellipse at top, #FFA500 0%, transparent 70%); /* Turuncu nebula */
-    z-index: -3; /* Nebula bulutlarının arka planın üzerinde olmasını sağlar */
-}
-
 /* Yıldız animasyonu */
 @keyframes stars {
     0% {
