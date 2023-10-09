@@ -4,17 +4,26 @@ body {
     padding: 0;
     background-color: #1f1f1f;
     font-family: 'Montserrat', sans-serif;
-    color: white;
-    overflow: hidden;
+}
+
+/* Logo */
+.logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
 }
 
 /* Menü */
+header {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
 .menu {
     list-style-type: none;
     padding: 0;
-    position: absolute;
-    top: 20px;
-    right: 20px; /* Sağ üste konumlandırma */
+    margin: 0;
 }
 
 .menu li {
@@ -22,97 +31,180 @@ body {
     margin-right: 20px;
 }
 
-.menu a {
+.menu li a {
     text-decoration: none;
     color: white;
-    font-weight: bold;
 }
 
-/* Anasayfa içeriği */
+/* Giriş metni */
 .intro {
     text-align: center;
+    margin-top: 100px;
+    color: white; /* Metni beyaz yapar */
+    font-size: 24px; /* Metni büyütür */
     padding: 20px;
 }
 
-/* Logo */
-.logo {
-    position: absolute;
-    top: 20px;
-    left: 20px;
+/* Beyaz dikdörtgen */
+.rectangle {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 2px solid #e38e29;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 600px;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    border-radius: 10px;
 }
 
-/* Yıldızlar için stil */
+/* Alt menü */
+.footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.button {
+    background-color: #e38e29;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+/* Gezegenler */
+.planet-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.planet {
+    position: absolute;
+    border-radius: 50%;
+    animation: rotate 30s linear infinite, changeColor 20s ease infinite;
+}
+
+.planet1, .planet2, .planet3, .planet4, .planet5, .planet6, .planet7, .planet8, .planet9, .planet10 {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    animation: rotatePlanet 20s linear infinite, changePlanetColor 15s ease infinite;
+}
+
+.planet1 {
+    background: radial-gradient(circle, #ffcc00, #ff6600);
+    top: 20%;
+    left: 15%;
+}
+
+.planet2 {
+    background: radial-gradient(circle, #0099cc, #0033cc);
+    top: 40%;
+    left: 70%;
+}
+
+.planet3 {
+    background: radial-gradient(circle, #cc33ff, #9933ff);
+    top: 70%;
+    left: 30%;
+}
+
+.planet4 {
+    background: radial-gradient(circle, #ffcc00, #ff6600);
+    top: 10%;
+    left: 60%;
+}
+
+.planet5 {
+    background: radial-gradient(circle, #0099cc, #0033cc);
+    top: 60%;
+    left: 20%;
+}
+
+.planet6 {
+    background: radial-gradient(circle, #cc33ff, #9933ff);
+    top: 80%;
+    left: 80%;
+}
+
+.planet7 {
+    background: radial-gradient(circle, #ffcc00, #ff6600);
+    top: 90%;
+    left: 45%;
+}
+
+.planet8 {
+    background: radial-gradient(circle, #0099cc, #0033cc);
+    top: 5%;
+    left: 90%;
+}
+
+.planet9 {
+    background: radial-gradient(circle, #cc33ff, #9933ff);
+    top: 60%;
+    left: 80%;
+}
+
+.planet10 {
+    background: radial-gradient(circle, #ffcc00, #ff6600);
+    top: 30%;
+    left: 5%;
+}
+
+@keyframes rotate {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
+}
+
+@keyframes changeColor {
+    0%, 100% {background-color: #ffcc00;}
+    50% {background-color: #ff6600;}
+}
+
+@keyframes rotatePlanet {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
+}
+
+@keyframes changePlanetColor {
+    0%, 100% {background-color: #ffcc00;}
+    50% {background-color: #ff6600;}
+}
+
+/* Yıldızlar */
 .stars {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/wVgAAD+A/Bb7hAAAAASUVORK5CYII='); /* Beyaz yıldızlar arka planı */
-    z-index: -1; /* Yıldızların arka planın üzerinde olmasını sağlar */
-    animation: twinkling 5s infinite; /* Yıldız animasyonunu ekler */
+    background-color: transparent;
+    pointer-events: none;
+    z-index: -1;
 }
 
-/* Gezegenler için stil */
-.planet-container {
+.stars::before {
+    content: "";
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.planet {
-    width: 50px;
-    height: 50px;
+    top: calc(100% * random());
+    left: calc(100% * random());
+    width: 2px;
+    height: 2px;
+    background: white;
+    animation: stars 10s infinite;
+    opacity: 0;
     border-radius: 50%;
-    animation: rotate 60s linear infinite; /* Gezegen animasyonunu ekler */
 }
 
-/* Gezegen animasyonu */
-@keyframes rotate {
+@keyframes stars {
     0% {
-        transform: translate(-50%, -50%) rotate(0deg);
+        transform: scale(1);
+        opacity: 0.7;
     }
     100% {
-        transform: translate(-50%, -50%) rotate(360deg);
-    }
-}
-
-/* Yıldız animasyonu */
-@keyframes twinkling {
-    0% {
-        transform: translateY(0);
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(-100vh);
+        transform: scale(1.5);
         opacity: 0;
     }
-}
-
-/* Alt menü stil */
-.footer {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-}
-
-/* Buttonlar */
-.button {
-    background-color: #e38e29;
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    margin-right: 10px;
-    border-radius: 5px;
-}
-
-/* Dikdörtgen stil */
-.rectangle {
-    width: 50%;
-    margin: 0 auto;
-    background-color: rgba(255, 255, 255, 0.1);
-    border: 2px solid #e38e29;
-    padding: 20px;
-    text-align: center;
 }
