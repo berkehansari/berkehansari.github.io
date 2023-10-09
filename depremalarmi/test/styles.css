@@ -4,17 +4,26 @@ body {
     padding: 0;
     background-color: #1f1f1f;
     font-family: 'Montserrat', sans-serif;
-    color: white;
-    overflow: hidden;
+}
+
+/* Logo */
+.logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
 }
 
 /* Menü */
+header {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
 .menu {
     list-style-type: none;
     padding: 0;
-    position: absolute;
-    top: 20px;
-    right: 20px; /* Sağ üste konumlandırma */
+    margin: 0;
 }
 
 .menu li {
@@ -22,107 +31,125 @@ body {
     margin-right: 20px;
 }
 
-.menu a {
+.menu li a {
     text-decoration: none;
     color: white;
-    font-weight: bold;
 }
 
-/* Logo stil */
-.logo {
+/* Giriş metni */
+.intro {
+    text-align: center;
+    margin-top: 100px;
+    padding: 20px;
+}
+
+/* Beyaz dikdörtgen */
+.rectangle {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 2px solid #e38e29;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 600px;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+/* Alt menü */
+.footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.button {
+    background-color: #e38e29;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+/* Gezegenler */
+.planet-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.planet {
     position: absolute;
-    top: 20px;
-    left: 20px;
-    width: 40px; /* İstediğiniz genişlik değerini ayarlayın */
-    height: auto;
+    border-radius: 50%;
+    animation: rotate 30s linear infinite, changeColor 20s ease infinite;
 }
 
-/* Yıldızlar için stil */
+.planet1 {
+    width: 50px;
+    height: 50px;
+    background: radial-gradient(circle, #ffcc00, #ff6600);
+    top: 20%;
+    left: 15%;
+    transform-origin: center;
+}
+
+.planet2 {
+    width: 40px;
+    height: 40px;
+    background: radial-gradient(circle, #0099cc, #0033cc);
+    top: 40%;
+    left: 70%;
+    transform-origin: center;
+}
+
+.planet3 {
+    width: 60px;
+    height: 60px;
+    background: radial-gradient(circle, #cc33ff, #9933ff);
+    top: 70%;
+    left: 30%;
+    transform-origin: center;
+}
+
+@keyframes rotate {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
+}
+
+@keyframes changeColor {
+    0%, 100% {background-color: #ffcc00;}
+    50% {background-color: #ff6600;}
+}
+
+/* Yıldızlar */
 .stars {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/wVgAAD+A/Bb7hAAAAASUVORK5CYII='); /* Beyaz yıldızlar arka planı */
-    z-index: -1; /* Yıldızların arka planın üzerinde olmasını sağlar */
-    animation: twinkling 5s infinite; /* Yıldız animasyonunu ekler */
+    background: #1f1f1f;
+    pointer-events: none;
+    z-index: -1;
 }
 
-/* Gezegenler için stil */
-.planet-container {
+.stars::before {
+    content: "";
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 0;
+    left: 0;
+    width: 1px;
+    height: 1px;
+    background: white;
+    animation: stars 20s infinite;
 }
 
-.planet {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    animation: rotate 60s linear infinite, colorChange 5s alternate infinite; /* Gezegen animasyonunu ve renk değişimini ekler */
-}
-
-/* Gezegen animasyonu */
-@keyframes rotate {
+@keyframes stars {
     0% {
-        transform: translate(-50%, -50%) rotate(0deg);
+        transform: translate(0, 0);
+        opacity: 0;
     }
     100% {
-        transform: translate(-50%, -50%) rotate(360deg);
-    }
-}
-
-/* Gezegenlerin renk değişimi */
-@keyframes colorChange {
-    0% {
-        background-color: #FF4500; /* Turuncu renkli gezegen */
-    }
-    50% {
-        background-color: #8A2BE2; /* Mor renkli gezegen */
-    }
-    100% {
-        background-color: #FF4500; /* Turuncu renkli gezegen */
-    }
-}
-
-/* Yıldız animasyonu */
-@keyframes twinkling {
-    0% {
-        transform: translateY(0);
+        transform: translate(200px, -200px);
         opacity: 1;
     }
-    100% {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-/* Alt menü stil */
-.footer {
-    position: absolute;
-    top: 50%; /* Sayfanın yüksekliğinin ortasına konumlandırma */
-    left: 50%; /* Sayfanın genişliğinin ortasına konumlandırma */
-    transform: translate(-50%, -50%);
-}
-
-/* Buttonlar */
-.button {
-    background-color: #e38e29;
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    margin-right: 10px;
-    border-radius: 5px;
-}
-
-/* Dikdörtgen stil */
-.rectangle {
-    width: 50%;
-    margin: 0 auto;
-    background-color: rgba(255, 255, 255, 0.1);
-    border: 2px solid #e38e29;
-    padding: 20px;
-    text-align: center;
 }
