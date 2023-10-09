@@ -5,23 +5,16 @@ body {
     background-color: #1f1f1f;
     font-family: 'Montserrat', sans-serif;
     color: white;
-}
-
-/* Başlık */
-header {
-    text-align: center;
-    padding: 20px;
-}
-
-header h1 {
-    font-size: 36px;
-    color: #e38e29;
+    overflow: hidden;
 }
 
 /* Menü */
 .menu {
     list-style-type: none;
     padding: 0;
+    position: absolute;
+    top: 20px;
+    right: 20px; /* Sağ üste konumlandırma */
 }
 
 .menu li {
@@ -41,16 +34,6 @@ header h1 {
     padding: 20px;
 }
 
-/* Dikdörtgen */
-.rectangle {
-    width: 50%;
-    margin: 0 auto;
-    background-color: rgba(255, 255, 255, 0.1);
-    border: 2px solid #e38e29;
-    padding: 20px;
-    text-align: center;
-}
-
 /* Logo */
 .logo {
     position: absolute;
@@ -58,22 +41,31 @@ header h1 {
     left: 20px;
 }
 
-/* Yıldızlar */
+/* Yıldızlar için stil */
 .stars {
-    position: absolute;
-    width: 2px;
-    height: 2px;
-    background-color: white;
-    animation: twinkling 5s infinite;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/wVgAAD+A/Bb7hAAAAASUVORK5CYII='); /* Beyaz yıldızlar arka planı */
+    z-index: -1; /* Yıldızların arka planın üzerinde olmasını sağlar */
+    animation: twinkling 5s infinite; /* Yıldız animasyonunu ekler */
 }
 
-/* Gezegenler */
-.planet {
+/* Gezegenler için stil */
+.planet-container {
     position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.planet {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    animation: rotate 60s linear infinite;
+    animation: rotate 60s linear infinite; /* Gezegen animasyonunu ekler */
 }
 
 /* Gezegen animasyonu */
@@ -98,7 +90,7 @@ header h1 {
     }
 }
 
-/* Alt menü */
+/* Alt menü stil */
 .footer {
     position: absolute;
     bottom: 20px;
@@ -113,4 +105,14 @@ header h1 {
     text-decoration: none;
     margin-right: 10px;
     border-radius: 5px;
+}
+
+/* Dikdörtgen stil */
+.rectangle {
+    width: 50%;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px solid #e38e29;
+    padding: 20px;
+    text-align: center;
 }
