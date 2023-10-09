@@ -40,6 +40,8 @@ header {
 .intro {
     text-align: center;
     margin-top: 100px;
+    color: white; /* Metni beyaz yapar */
+    font-size: 24px; /* Metni büyütür */
     padding: 20px;
 }
 
@@ -52,6 +54,7 @@ header {
     max-width: 600px;
     padding: 20px;
     text-align: center;
+    color: white;
     border-radius: 10px;
 }
 
