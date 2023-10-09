@@ -1,70 +1,4 @@
-/* Reset CSS */
-body, h1, p, ul, li, a {
-    margin: 0;
-    padding: 0;
-}
-
-/* Genel Stil */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #000; /* Arka plan rengini siyah olarak ayarlıyoruz */
-    color: #fff;
-    text-align: center;
-    padding: 20px;
-}
-
-h1 {
-    font-size: 36px;
-    margin-bottom: 20px;
-}
-
-p {
-    font-size: 18px;
-    margin-bottom: 20px;
-}
-
-/* Header Stil */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-nav ul {
-    list-style: none;
-}
-
-nav ul li {
-    display: inline;
-    margin-right: 20px;
-}
-
-nav a {
-    text-decoration: none;
-    color: #fff;
-    font-size: 16px;
-}
-
-/* Intro Bölümü Stil */
-.intro {
-    background-color: rgba(0, 0, 0, 0.6); /* Saydamlık ekliyoruz */
-    padding: 20px;
-}
-
-/* Footer Stil */
-footer {
-    margin-top: 50px;
-}
-
-.social-links a {
-    display: inline-block;
-    text-decoration: none;
-    color: #fff;
-    font-size: 18px;
-    margin: 0 10px;
-}
-
-/* Uzay Temalı Arkaplan */
+/* CSS dosyası içerisinde uzay temalı arka plan oluşturma */
 body::before {
     content: "";
     position: fixed;
@@ -72,46 +6,80 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: 
-        /* Uzay temalı pixel art ASCII sanatı */
-        "...................☆..................\n" +
-        "............✦.✦.✦.✦.✦.✦.✦.✦...........\n" +
-        "................★..................\n" +
-        ".................✧...................\n" +
-        "..................✧..................\n" +
-        ".............✦..✧..✦.............\n" +
-        "..........✦..✦✦...✦..✦..........\n" +
-        ".................✧...................\n" +
-        "............★.....................\n" +
-        "............✧✧✧✧.............\n" +
-        "...........✦✦★✦✦............\n" +
-        ".............✧✧✧✧.............\n" +
-        "............★.....................\n" +
-        "..........✦......................\n" +
-        "........★.......................\n" +
-        ".............✦....................\n" +
-        ".................☆..................\n" +
-        "..................✦..................\n" +
-        "...................✧..................\n" +
-        "......................☆..................\n" +
-        "..................✦..................\n" +
-        "................★....................\n" +
-        "..............✦✦................\n" +
-        "............✦★✦✦✦..........\n" +
-        ".............✧✦✧✧..........\n" +
-        ".................★..............\n" +
-        "......................✦...............\n" +
-        "....................★................\n" +
-        "...................✧.................\n" +
-        ".................★...................\n" +
-        "..............✦..............\n" +
-        ".............✦................\n" +
-        "..............✧..............\n" +
-        "..............★..............";
-    font-family: monospace;
-    font-size: 12px;
-    color: #fff;
-    white-space: pre;
-    pointer-events: none;
-    z-index: -1; /* Arkaplanın içerik üzerinde olmasını sağlar */
+    background: #1f1f1f; /* Arka plan rengini siyah olarak ayarlıyoruz */
+    z-index: -1; /* Arka planın içerik üzerinde olmasını sağlar */
+}
+
+/* Beyaz yıldızlar */
+body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/wVgAAD+A/Bb7hAAAAASUVORK5CYII='); /* Beyaz yıldızlar arka planı */
+    z-index: -2; /* Yıldızların arka planın üzerinde olmasını sağlar */
+    animation: stars 50s linear infinite; /* Yıldız animasyonunu ekler */
+}
+
+/* Mor ve turuncu nebula bulutları */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(ellipse at bottom, #8A2BE2 0%, transparent 70%), /* Mor nebula */
+        radial-gradient(ellipse at top, #FFA500 0%, transparent 70%); /* Turuncu nebula */
+    z-index: -3; /* Nebula bulutlarının arka planın üzerinde olmasını sağlar */
+}
+
+/* Yıldız animasyonu */
+@keyframes stars {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-100vh);
+    }
+}
+
+/* Hareketli ve dönen gezegenler */
+.gezegenler {
+    position: fixed;
+    top: 50%; /* Sayfanın yüksekliğinin ortasına gelecek şekilde ayarlanabilir */
+    left: 50%; /* Sayfanın genişliğinin ortasına gelecek şekilde ayarlanabilir */
+    transform: translate(-50%, -50%); /* Ortalamak için kullanılır */
+    animation: rotate 60s linear infinite, move 20s linear infinite; /* Gezegen animasyonları ekler */
+}
+
+/* Gezegenlerin dönme animasyonu */
+@keyframes rotate {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+/* Gezegenlerin hareket animasyonu */
+@keyframes move {
+    0% {
+        transform: translate(-50%, -50%) translateY(0);
+    }
+    100% {
+        transform: translate(-50%, -50%) translateY(-20px);
+    }
+}
+
+/* Gezegenlerin stilini özelleştirin */
+.gezegen {
+    width: 50px;
+    height: 50px;
+    background: #FF4500; /* Turuncu renkli gezegen */
+    border-radius: 50%; /* Dairesel gezegen şekli */
 }
