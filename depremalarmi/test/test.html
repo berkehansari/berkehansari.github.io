@@ -1,47 +1,155 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lunarts Studio</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
-</head>
-<body>
-    <div class="logo"> <!-- Logo -->
-        <img src="logw.png" alt="Lunarts Studio Logo">
-    </div>
+/* Genel stil */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #1f1f1f;
+    font-family: 'Montserrat', sans-serif;
+}
 
-    <header>
-        <nav>
-            <ul class="menu">
-                <li><a href="#duyurular">Duyurular</a></li>
-                <li><a href="#sss">SSS</a></li>
-                <li><a href="#portfolio">Berkehan Sarı</a></li>
-            </ul>
-        </nav>
-    </header>
+/* Logo */
+.logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
 
-    <section class="intro">
-        <p>Hoş geldiniz! Lunarts Studio, uzay temalı pixelart tasarımları ve yazılım geliştirme konusunda bir stüdyodur. Size benzersiz deneyimler sunuyoruz.</p>
-    </section>
+/* Menü */
+header {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
 
-    <div class="stars"></div> <!-- Yıldızlar -->
+.menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
 
-    <div class="planet-container">
-        <div class="planet planet1"></div> <!-- Gezegenler -->
-        <div class="planet planet2"></div>
-        <div class="planet planet3"></div>
-    </div>
+.menu li {
+    display: inline;
+    margin-right: 20px;
+}
 
-    <footer class="footer"> <!-- Alt menü -->
-        <a class="button" href="https://www.instagram.com/">Instagram</a>
-        <a class="button" href="https://twitter.com/">Twitter</a>
-        <a class="button" href="https://play.google.com/store">Google Play</a>
-    </footer>
+.menu li a {
+    text-decoration: none;
+    color: white;
+}
 
-    <div class="rectangle"> <!-- Dikdörtgen -->
-        <!-- Burada içeriğinizi ekleyebilirsiniz -->
-    </div>
-</body>
-</html>
+/* Giriş metni */
+.intro {
+    text-align: center;
+    margin-top: 100px;
+    padding: 20px;
+}
+
+/* Beyaz dikdörtgen */
+.rectangle {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 2px solid #e38e29;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 600px;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+/* Alt menü */
+.footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.button {
+    background-color: #e38e29;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+/* Gezegenler */
+.planet-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.planet {
+    position: absolute;
+    border-radius: 50%;
+    animation: rotate 30s linear infinite, changeColor 20s ease infinite;
+}
+
+.planet1 {
+    width: 50px;
+    height: 50px;
+    background: radial-gradient(circle, #ffcc00, #ff6600);
+    top: 20%;
+    left: 15%;
+    transform-origin: center;
+}
+
+.planet2 {
+    width: 40px;
+    height: 40px;
+    background: radial-gradient(circle, #0099cc, #0033cc);
+    top: 40%;
+    left: 70%;
+    transform-origin: center;
+}
+
+.planet3 {
+    width: 60px;
+    height: 60px;
+    background: radial-gradient(circle, #cc33ff, #9933ff);
+    top: 70%;
+    left: 30%;
+    transform-origin: center;
+}
+
+@keyframes rotate {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
+}
+
+@keyframes changeColor {
+    0%, 100% {background-color: #ffcc00;}
+    50% {background-color: #ff6600;}
+}
+
+/* Yıldızlar */
+.stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #1f1f1f;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.stars::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1px;
+    height: 1px;
+    background: white;
+    animation: stars 20s infinite;
+}
+
+@keyframes stars {
+    0% {
+        transform: translate(0, 0);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(200px, -200px);
+        opacity: 1;
+    }
+}
