@@ -65,6 +65,19 @@ header {
     margin-top: 10px;
 }
 
+/* Beyaz dikdörtgen */
+.rectangle {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 2px solid #e38e29;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 600px;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    color: white; /* Metni beyaz yapar */
+}
+
 /* Arkaplan görseli */
 body::before {
     content: "";
