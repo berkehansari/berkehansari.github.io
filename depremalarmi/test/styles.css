@@ -28,12 +28,6 @@ body {
     font-weight: bold;
 }
 
-/* Anasayfa içeriği */
-.intro {
-    text-align: center;
-    padding: 20px;
-}
-
 /* Logo stil */
 .logo {
     position: absolute;
@@ -54,6 +48,7 @@ body {
     z-index: -1; /* Yıldızların arka planın üzerinde olmasını sağlar */
     animation: twinkling 5s infinite; /* Yıldız animasyonunu ekler */
 }
+
 /* Gezegenler için stil */
 .planet-container {
     position: absolute;
@@ -99,16 +94,17 @@ body {
         opacity: 1;
     }
     100% {
-        transform: translateY(-100vh);
-        opacity: 0;
+        transform: translateY(0);
+        opacity: 1;
     }
 }
 
 /* Alt menü stil */
 .footer {
     position: absolute;
-    bottom: 20px;
-    left: 20px;
+    top: 50%; /* Sayfanın yüksekliğinin ortasına konumlandırma */
+    left: 50%; /* Sayfanın genişliğinin ortasına konumlandırma */
+    transform: translate(-50%, -50%);
 }
 
 /* Buttonlar */
